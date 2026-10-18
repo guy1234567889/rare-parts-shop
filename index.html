@@ -19,6 +19,8 @@
         .price { font-size: 18px; font-weight: bold; color: #27ae60; margin-bottom: 10px; }
         .btn { background: #27ae60; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; text-align: center; display: block; font-weight: bold; }
         .btn:hover { background: #219653; }
+        .no-results { display: none; font-size: 18px; color: #7f8c8d; margin: 2rem; }
+        .no-results a { color: #27ae60; font-weight: bold; }
         footer { background: #2c3e50; color: white; padding: 1.5rem; margin-top: 3rem; }
     </style>
 </head>
@@ -39,7 +41,11 @@
         <input type="text" class="search-box" placeholder="חפש מתאם, כבל, קליפס...">
     </div>
 
-    <section class="products">
+    <div class="no-results" id="noResultsMsg">
+        לא מצאנו את מה שחיפשת? <a href="request.html">לחץ כאן ונחפש עבורך את החלק בעלי אקספרס!</a>
+    </div>
+
+    <section class="products" id="productsContainer">
         <!-- מוצר 1 -->
         <div class="card">
             <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80" alt="מתאם למקבוק">
@@ -136,22 +142,34 @@
         <p>© כל הזכויות שמורות - החוליה החסרה</p>
     </footer>
 
-    <!-- סקריפט לחיפוש דינמי בזמן אמת -->
+    <!-- סקריפט חיפוש חכם ומדויק -->
     <script>
         const searchInput = document.querySelector('.search-box');
         const cards = document.querySelectorAll('.card');
+        const noResultsMsg = document.getElementById('noResultsMsg');
 
         searchInput.addEventListener('input', function(e) {
-            const term = e.target.value.toLowerCase();
+            const term = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
             cards.forEach(card => {
                 const title = card.querySelector('h3').textContent.toLowerCase();
                 const desc = card.querySelector('p').textContent.toLowerCase();
+                
                 if (title.includes(term) || desc.includes(term)) {
                     card.style.display = 'flex';
+                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // אם אין תוצאות, נציג הודעה שמפנה לטופס בקשת מוצר
+            if (visibleCount === 0 && term !== '') {
+                noResultsMsg.style.display = 'block';
+            } else {
+                noResultsMsg.style.display = 'none';
+            }
         });
     </script>
 </body>
