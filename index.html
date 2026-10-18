@@ -7,13 +7,18 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; text-align: center; }
         header { background: #2c3e50; color: white; padding: 2rem; }
-        .hero { padding: 3rem 1rem; }
+        .hero { padding: 2.5rem 1rem; }
         .search-box { padding: 15px; width: 60%; max-width: 500px; font-size: 18px; border: 2px solid #ccc; border-radius: 8px; }
-        .products { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 2rem; }
-        .card { background: white; padding: 20px; border-radius: 8px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn { background: #27ae60; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; }
-        .nav-links { margin: 20px; }
+        .nav-links { margin: 15px 0; }
         .nav-links a { margin: 0 15px; color: #2c3e50; text-decoration: none; font-weight: bold; }
+        .products { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: white; padding: 15px; border-radius: 8px; width: 260px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; background-color: #eee; }
+        .card h3 { font-size: 18px; margin: 10px 0 5px 0; color: #2c3e50; }
+        .card p { font-size: 14px; color: #666; margin: 5px 0 15px 0; line-height: 1.4; }
+        .price { font-size: 18px; font-weight: bold; color: #27ae60; margin-bottom: 10px; }
+        .btn { background: #27ae60; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; text-align: center; display: block; font-weight: bold; }
+        .btn:hover { background: #219653; }
         footer { background: #2c3e50; color: white; padding: 1.5rem; margin-top: 3rem; }
     </style>
 </head>
@@ -35,17 +40,95 @@
     </div>
 
     <section class="products">
+        <!-- מוצר 1 -->
         <div class="card">
-            <h3>מתאם למקבוק</h3>
-            <p>מתאם מקורי למטען אפל (Duckhead)</p>
-            <p><strong>₪35</strong></p>
-            <a href="#" class="btn">לרכישה מהירה</a>
+            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80" alt="מתאם למקבוק">
+            <div>
+                <h3>מתאם תקע למקבוק</h3>
+                <p>מתאם תקע מקורי (Duckhead) למטעני מקבוק של אפל. פתרון מושלם כשמתאם מקורי נאבד.</p>
+            </div>
+            <div>
+                <div class="price">₪35</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
         </div>
+
+        <!-- מוצר 2 -->
         <div class="card">
-            <h3>פקקי אבק ללפטופ</h3>
-            <p>סט הגנה מלא לחיבורי USB-C</p>
-            <p><strong>₪20</strong></p>
-            <a href="#" class="btn">לרכישה מהירה</a>
+            <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?auto=format&fit=crop&w=400&q=80" alt="פקקי אבק">
+            <div>
+                <h3>פקקי אבק ללפטופ וטלפון</h3>
+                <p>סט סיליקון מלא להגנה על חיבורי USB-C מפני אבק, לכלוך ולחות (מעולה לחוף הים או לשטח).</p>
+            </div>
+            <div>
+                <div class="price">₪20</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
+        </div>
+
+        <!-- מוצר 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=400&q=80" alt="קליפסים לרכב">
+            <div>
+                <h3>קליפסים לפגושים ודשבורד</h3>
+                <p>סט 100 קליפסים ותושבות פלסטיק לרכבים נפוצים (מאזדה, קיה, יונדאי) שמונעים שברים בפירוק פלסטיקה.</p>
+            </div>
+            <div>
+                <div class="price">₪45</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
+        </div>
+
+        <!-- מוצר 4 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=400&q=80" alt="אטמי סיליקון לבקבוקים">
+            <div>
+                <h3>אטמי סיליקון לבקבוקי שתייה</h3>
+                <p>אטמים חלופיים איכותיים לבקבוקי טרמוס פופולריים. אין צורך לזרוק בקבוק יקר בגלל אטם שאיבד גמישות.</p>
+            </div>
+            <div>
+                <div class="price">₪15</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
+        </div>
+
+        <!-- מוצר 5 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=400&q=80" alt="כבל USB-C קצר">
+            <div>
+                <h3>כבל USB-C קצר / זווית</h3>
+                <p>כבל טעינה מהירה באורך 15 ס"מ או בעיצוב 90 מעלות. מושלם לחיבור נוח לפאוור-בנק או לתושבת ברכב.</p>
+            </div>
+            <div>
+                <div class="price">₪25</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
+        </div>
+
+        <!-- מוצר 6 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="סט ברגים זעירים">
+            <div>
+                <h3>סט ברגים זעירים לתיקונים</h3>
+                <p>מארז ברגים, אומים ודיסקיות מיניאטוריות לתיקון משקפיים, מחשבים ניידים ואלקטרוניקה עדינה בבית.</p>
+            </div>
+            <div>
+                <div class="price">₪30</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
+        </div>
+
+        <!-- מוצר 7 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="מתאם אודיו DAC">
+            <div>
+                <h3>מתאם אודיו Type-C ל-3.5 מ"מ</h3>
+                <p>מתאם איכותי הכולל שבב DAC מובנה לסאונד צלול בחיבור אוזניות חוטיות למכשירים חדשים.</p>
+            </div>
+            <div>
+                <div class="price">₪40</div>
+                <a href="#" class="btn">לרכישה מהירה</a>
+            </div>
         </div>
     </section>
 
