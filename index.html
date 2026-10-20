@@ -172,5 +172,36 @@
             }
         });
     </script>
+    <script>
+  // משיכת נתוני המוצרים מקובץ ה-JSON שהעלינו
+  fetch('products_catalog.json')
+    .then(response => response.json())
+    .then(data => {
+      // מציאת הקונטיינר של המוצרים באתר
+      const productsContainer = document.querySelector('.products');
+      
+      // ניקוי הקונטיינר למקרה שיש בו תוכן ישן
+      productsContainer.innerHTML = '';
+      
+      // מעבר על כל מוצר בקובץ ויצירת כרטיסייה עבורו
+      data.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        card.innerHTML = `
+          <img src="${product.image_url}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p class="price">₪${product.price_ils.toFixed(2)}</p>
+          <p>${product.description}</p>
+          <a href="${product.buy_link}" target="_blank" class="btn">קנה עכשיו בעלי אקספרס</a>
+        `;
+        
+        productsContainer.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error('שגיאה בטעינת המוצרים:', error);
+    });
+</script>
 </body>
 </html>
